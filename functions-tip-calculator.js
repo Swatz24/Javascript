@@ -20,7 +20,7 @@ function getBillTotal(bill){
     // converting $ value to cents, before calculating tip to avoid rounding errors.
   calTip = calculateTip(bill*100);
 
-  console.log("Tip : " + "$",calTip);
+  console.log("Tip returned from the calculateTip(): " + "$",calTip);
 
   // Declaring the billTotal variable and storing the added output (Bill + Tip)
   let billTotal ;
@@ -46,5 +46,5 @@ function calculateTip(bill){
 }
 
 
-console.log("Updated Bill to add the tip: $", totalBill);
+console.log("Updated Bill returned from the getBillTotal(): $", totalBill);
 
