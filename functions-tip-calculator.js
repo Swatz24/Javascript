@@ -9,7 +9,7 @@ let totalBill;
 console.log("Original Bill:", "$", originalBill);
 
 // Call function to calculate the total bill and storing the returned value to a variable totalBill
-totalBill=getBillTotal(originalBill);
+totalBill= getBillTotal(originalBill);
 
 // Function to calculate the total bill including the tip.
 function getBillTotal(bill){
