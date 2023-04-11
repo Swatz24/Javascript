@@ -1,7 +1,8 @@
 // Superclass
-function Job (name, field , degree, jobType){
+function Job (name, field, industry , degree, jobType){
   this.name = name;
   this.field = field;
+  this.industry = industry;
   this.degree = degree;
   this.jobType = jobType;
 }
@@ -12,7 +13,7 @@ Job.prototype.getName = function(){
 }
 
 Job.prototype.getFieldAndIndustry = function(){
-  return `Job Industry :${this.field}.`;
+  return `Job Field and Industry :${this.field} and ${this.industry}.`;
 }
 
 Job.prototype.requiresDegree = function(reqDegree){
@@ -30,26 +31,26 @@ Job.prototype.requiresExperience = function(experience){
 }
 
 
-const job1 = new Job('Delivery Driver', 'Hospitality', '','Part-time' );
+const job1 = new Job('Delivery Driver', 'Hospitality','Logistics' ,'','Part-time' );
   console.log(job1.getName());
   console.log(job1.getFieldAndIndustry());
   console.log(job1.requiresDegree('false'));
   console.log(job1.requiresExperience(2));
-const job2 = new Job('Sales Rep' , 'Marketing','diploma', 'Contract');
+const job2 = new Job('Sales Rep' , 'Marketing','Service','diploma', 'Contract');
   console.log(job2.getName());
   console.log(job2.getFieldAndIndustry());
   console.log(job2.requiresDegree('true'));
   console.log(job2.requiresExperience(5));
-const job3 = new Job('Caregiver', 'Health Care','B.sc', 'Full-time');
+const job3 = new Job('Caregiver', 'Health Care','Medical','B.sc', 'Full-time');
   console.log(job3.getName());
   console.log(job3.getFieldAndIndustry());
   console.log(job3.requiresDegree('true'));
   console.log(job3.requiresExperience(3));
 
   // Extended Class
-function ITJob(name, field, jobType, location ){
+function ITJob(name, field,industry, degree, jobType, location ){
     // Call constructor of superclass to initialize superclass-derived members.
-    Job.call(this, name, field, jobType);
+    Job.call(this, name, field,industry,degree, jobType);
       // Initialize subclass's own members
     this.location = location;
 }
@@ -69,7 +70,7 @@ ITJob.prototype.getName = function() {
   return `Hiring ${this.name} - Please Contact XYZ@gmail.com`;
 }
 
-const ITjob1 = new ITJob('Java Developer', 'Software','B.E' , 'Contractor', 'Remote');
+const ITjob1 = new ITJob('Java Developer', 'Software','I.T', 'B.E' , 'Contractor', 'Remote');
   console.log(ITjob1.getName());
   console.log(ITjob1.getFieldAndIndustry());
   console.log(ITjob1.requiresDegree('true'));
