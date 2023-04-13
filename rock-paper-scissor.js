@@ -91,4 +91,3 @@ function playRound( play1, play2){
 }
 console.log(result);
 
-

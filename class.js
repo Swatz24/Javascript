@@ -33,7 +33,7 @@ class Job {
 }
 
 const job1 = new Job('Delivery Driver', 'Hospitality','Logistics', '', 'Part-time' );
-console.log(job1);
+  console.log(job1);
   console.log(job1.getName());
   console.log(job1.getFieldAndIndustry());
   console.log(job1.requiresDegree('false'));
@@ -78,3 +78,5 @@ const ITjob2 = new ITJob('Quality Analyst', 'Software','I.T', 'Masters' , 'Full-
   console.log(ITjob2.getFieldAndIndustry());
   console.log(ITjob2.requiresDegree('true'));
   console.log(ITjob2.requiresExperience(7));
+
+  

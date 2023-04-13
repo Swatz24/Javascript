@@ -8,8 +8,9 @@ let photoSlideShow = {
   
     let y = this.currentPhotoIndex;
     
-    if (y < x-1 ){
-      return this.photoList[y+1];
+    if (this.currentPhotoIndex < this.photoList.length){
+      this.currentPhotoIndex++;
+      return this.photoList[this.currentPhotoIndex];
     }
     else if (y == x -1){
       return 'End of Slideshow';
@@ -21,7 +22,8 @@ let photoSlideShow = {
     if (this.currentPhotoIndex == 0 ){
       return 'Beginning of the Slideshow';
     }else{
-      return this.photoList[(this.currentPhotoIndex) -1];
+      this.currentPhotoIndex--;
+      return this.photoList[(this.currentPhotoIndex)];
     }
 
   },
@@ -36,3 +38,5 @@ console.log("Current Photo:", photoSlideShow.getCurrentPhoto());
 console.log("Next Photo:", photoSlideShow.nextPhoto());
 console.log("Previous Photo:", photoSlideShow.prevPhoto());
 
+console.log("Previous Photo:", photoSlideShow.prevPhoto());
+console.log("Next Photo:", photoSlideShow.nextPhoto());
