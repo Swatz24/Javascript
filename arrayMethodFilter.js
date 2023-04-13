@@ -10,7 +10,7 @@ const users = [
 ];
 
 //Find a user named 'Jose'
-const userJose = users.filter(x => x.firstName === 'Jose');
+const userJose = users.find(x => x.firstName === 'Jose');
 console.log("Details of user Jose:", userJose);
 
 //Get an array of all the premium members
