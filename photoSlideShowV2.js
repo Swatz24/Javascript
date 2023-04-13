@@ -1,7 +1,7 @@
 let photoSlideShow = {
   photoList : ['photo1', 'photo2','photo3','photo4','photo5'],
 
-  currentPhotoIndex : 0,
+  currentPhotoIndex : 3,
 
   nextPhoto : function(){
     let x = this.photoList.length;
