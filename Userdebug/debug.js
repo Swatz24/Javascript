@@ -28,9 +28,9 @@ console.log("Hey, can you tell me how many stores you have?");
 function hasStore() {
 for (let i = 0; i <=2; i++)  // Edited i < 2 to i <=2 to display 3 store owners.
 {
-        people = Object.values(storeOwners); // Object.values points to the values in the storeOwners object.
-      let person = Object.keys(people[i]);
-         console.log("Yes, " + person + " has one");
+        people = storeOwners[i]; 
+        let person = Object.keys(people);
+        console.log("Yes, " + person + " has one");
 }
 }
 
