@@ -1,0 +1,53 @@
+<html>
+  <body>
+   <header>
+      <ul>
+         <li class="first">Item 1</li>
+         <li class="selected">Item 2</li>
+         <li class="last">Item 3</li>
+      </ul>
+ </header>
+    <div class="col">
+      <section>
+        <h2>Section 1</h2>
+      </section>
+      <section class="current">
+        <h2 class="highlight">Section 2</h2>
+      </section>
+      <section>
+        <h1>Section 3</h1>
+      </section>
+    </div>
+
+    <script>
+      //Get the header element
+      const headerElm = document.getElementsByTagName('header');
+      console.log(document.querySelector('header'));
+      console.log(headerElm);
+      //Get all the section elements
+      const sectionElm = document.getElementsByTagName('section');
+
+      console.log(sectionElm);
+      //Get the section element with class="current"
+      const sectionCurrent = document.getElementsByClassName('current');
+      console.log(sectionCurrent);
+      const sectionCurr = document.querySelector('section.current') ;
+      console.log(sectionCurr);
+      
+      //Get the section that comes after the current section
+      const nextSection = document.querySelector('section.current').nextElementSibling;
+      console.log(nextSection);
+      //Get the h2 node from the section before the 'current' section
+      const h_Section = document.querySelector('section.current').previousElementSibling.children;
+      console.log(h_Section);
+      //Get the div that contains the section that has an h2 with a class of 'highlight'
+      const divElm = document.querySelector('h2.highlight').parentElement.parentElement;
+      console.log(divElm);
+
+      //Get all the sections that contain an H2 (using a single statement);
+  
+      const h2Section = document.querySelectorAll('section:has(h2)');
+      console.log(h2Section);
+    </script>
+  </body>
+</html>
