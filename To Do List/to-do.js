@@ -1,5 +1,5 @@
 const todoList = [];
-
+renderTodoList();
 function addToDo(){
   let todoName = document.querySelector('.js-name-input').value;
   let todoDate = document.querySelector('.js-date-input').value;
@@ -20,15 +20,29 @@ for (let i=0; i< todoList.length; i++){
   const html = `
     <div>${todoName} </div>
     <div> ${todoDate} </div>
-    <button onclick="
-      todoList.splice(${i}, 1);  
-      renderTodoList();
-      "class="delete-todo-button">Mark Completed
+    <button 
+      class="delete-todo-button js-delete-todo-button">Mark Completed
       </button>
     `;
   todoListHTML += html;
 }
 
 document.querySelector('.js-todo-list').innerHTML = todoListHTML;
+
+document.querySelectorAll('.js-delete-todo-button'). 
+      forEach((deleteButton, index) => {
+          deleteButton.addEventListener('click' , () => {
+            todoList.splice(index, 1);  
+            renderTodoList();
+          });
+        
+      });
 }
+
+document.querySelector('.add-todo-button').
+    addEventListener('click', () =>  {
+      addToDo();
+      }  
+    );
+
 
