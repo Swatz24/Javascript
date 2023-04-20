@@ -32,10 +32,10 @@ function fetchUserById(userId) {
 
 fetchUserById(1)
   .then(function(userInfo){
-    console.log(userInfo);
+    console.log("User Information" , userInfo);
     return fetchUserById(2);
   }).then(function(userInfo){
-    console.log(userInfo);
+    console.log("User Information:", userInfo);
   })
   .catch(function(err){
     console.log(err);
