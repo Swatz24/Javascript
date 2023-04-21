@@ -15,7 +15,7 @@ const allPostButton = document.querySelector('.js-all-posts');
           document.querySelector('.js-display').innerHTML += displayHtml;
           });
         }
-      ));
+      ).catch((error) => console.log(error)));
 
 // Get post with id of 10 and display when the button is clicked.
   const postId10 = document.querySelector('.js-post-10');
@@ -27,7 +27,7 @@ const allPostButton = document.querySelector('.js-all-posts');
       const displayHtml = document.querySelector('.js-display');
       displayHtml.innerHTML ='';
       displayHtml.innerHTML = `<p>${JSON.stringify(json)}</p>`;
-  })
+  }).catch((error) => console.log(error))
     );
 
 
@@ -36,7 +36,7 @@ const allPostButton = document.querySelector('.js-all-posts');
 const createPost = document.querySelector('.js-create');
 
 createPost.addEventListener
-('click', () => 
+('click', () => {
     fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: JSON.stringify({
@@ -54,7 +54,8 @@ createPost.addEventListener
       const displayHtml = document.querySelector('.js-display');
       displayHtml.innerHTML ='';
       displayHtml.innerHTML = `<p>The ID of the new post that was created : ${json.id}</p>`;
-    })
+    }).catch((error) => console.log(error));
+  }
 );
 
 //Replace the post with id of 12 and render the responseJSON
@@ -82,7 +83,7 @@ replacePost.addEventListener
         displayHtml.innerHTML ='';
         displayHtml.innerHTML = `<p>Replaced Post:</p>
                                 <p>${JSON.stringify(json)}</p>`;
-       })
+       }).catch((error) => console.log(error));
   }
     );
 
@@ -110,7 +111,7 @@ updatePost.addEventListener
             displayHtml.innerHTML ='';
             displayHtml.innerHTML = `<p>Post with Id 12 with the updated title: ${JSON.stringify(json)}</p>`;
 
-          } )
+          } ).catch((error) => console.log(error))
       }
     );      
 
@@ -129,5 +130,5 @@ deletePost.addEventListener
         const displayHtml = document.querySelector('.js-display');
         displayHtml.innerHTML ='';
         displayHtml.innerHTML = `<p>Post with Id 12 is deleted successfully!!</p>`;
-       })
+       }).catch((error) => console.log(error))
       });
